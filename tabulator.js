@@ -1,7 +1,7 @@
 
 /**
  * Notes:
- * This provides a tabular view of the grid-combined geoJSON dataset
+ * This provides a tabular view of the streetlights geoJSON dataset
  * Total size of dataset is 3788 records. 
  * The full dataset takes a long time to draw so it is recommended to parse it before viewing
  * 
@@ -11,7 +11,7 @@
 
 function importGeoJSON() {
     // imports geoJSON file containing all streetlights data
-    const path = 'grid-combined.geojson'    //for the moment, geoJSON file is in same directory as this file
+    const path = 'streetlights.geojson'    //for the moment, geoJSON file is in same directory as this file
 
     fetch(path)
         .then(function(response) {
