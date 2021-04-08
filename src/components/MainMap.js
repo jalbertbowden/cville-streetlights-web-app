@@ -32,29 +32,27 @@ const MainMap = (props) => {
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 />
                 
-                <MarkerClusterGroup
-                        spiderfyDistanceMultiplier={1}
-                        showCoverageOnHover={false}
-                >   
-                    {
-                        props.streetlights.features.map((dataItem, k) => {
-                            console.log('', dataItem);
-
-                            const coordinates = dataItem.geometry.coordinates;
-                            const fixtureStyle = dataItem.properties.FIXTURE_ST;
-                            return (
-                                <Marker
-                                    key={ k }
-                                    position={ [coordinates[1], coordinates[0]] }
-                                >
-                                    <Tooltip direction="right" offset={ [-8, -2] } opacity={ 1 }>
-                                        <span>{ fixtureStyle }</span>
-                                    </Tooltip>
-                                </Marker>
-                            )
-                        })
-                    }
-                </MarkerClusterGroup>
+                    <MarkerClusterGroup
+                            spiderfyDistanceMultiplier={1}
+                            showCoverageOnHover={false}
+                    >   
+                        {
+                            props.streetlights.features.map((dataItem, k) => {
+                                const coordinates = dataItem.geometry.coordinates;
+                                const fixtureStyle = dataItem.properties.FIXTURE_ST;
+                                return (
+                                    <Marker
+                                        key={ k }
+                                        position={ [coordinates[1], coordinates[0]] }
+                                    >
+                                        <Tooltip direction="right" offset={ [-8, -2] } opacity={ 1 }>
+                                            <span>{ fixtureStyle }</span>
+                                        </Tooltip>
+                                    </Marker>
+                                )
+                            })
+                        }
+                    </MarkerClusterGroup>
             </MapContainer>
         :
             'Data is loading...'
