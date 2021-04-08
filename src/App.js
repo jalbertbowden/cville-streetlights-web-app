@@ -1,15 +1,12 @@
 import './App.css';
-import React, { useState, useEffect, Component, Fragment } from 'react';
-import axios from 'axios';
+import React from 'react';
 import MainMap from './components/MainMap';
 import streetlights from './streetlights.json';
 
-class App extends Component {
-  render(){
+const App = () => {
   return (
       <MainMap streetlights={streetlights}/>
   );
-  }
 }
 
 export default App;
